@@ -1,0 +1,22 @@
+incluir("curl")
+incluir("json")
+
+escribir("Ingresa un número:")
+numero = leer()
+
+personaje = curl.peticion("https://rickandmortyapi.com/api/character/"..numero)
+d = json.decodificar(personaje)
+nombrePersonaje = "Personaje "..numero.." : "..d.name
+imagenPersonaje = d.image
+
+nombrePersonajeAscii = curl.peticion("https://artii.herokuapp.com/make?text="..curl.escape(nombrePersonaje))
+
+imgAscii = curl.peticion("https://process.filestackapi.com/Almt4LsESSX2I6VudlH4iz/ascii=size:85/"..imagenPersonaje)
+imgAscii = cadena.reemplazar(imgAscii,'<html><head></head><body style="background: #FFFFFF"><pre style="font-family: Consolas, monaco, monospace; font-size: 12px; color: #000000">','')
+imgAscii = cadena.reemplazar(imgAscii,'</pre></body></html>','')
+imgAscii = cadena.reemplazar(imgAscii,'<br>','\n')
+
+limpiar()
+escribir(nombrePersonajeAscii.."\n\n")
+escribir(imagenPersonaje.."\n\n")
+escribir(imgAscii)
