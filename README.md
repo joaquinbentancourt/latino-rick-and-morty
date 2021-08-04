@@ -3,9 +3,10 @@ Script de consola solicitando información de personajes a la apirest https://ri
 
 
 Librerías necesarias 
-https://github.com/lenguaje-latino/latino-json 
 
-https://github.com/lenguaje-latino/latino-cURL
+- https://github.com/lenguaje-latino/latino-json 
+
+- https://github.com/lenguaje-latino/latino-cURL
 
 Luego de Instalar el lenguaje Latino y las librerías el script se ejecuta desde dentro de la carpeta con el comando: 
 
